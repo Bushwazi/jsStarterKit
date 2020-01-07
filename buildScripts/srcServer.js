@@ -21,6 +21,15 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../src/index.html"));
 });
 
+app.get("/users", function(req, res) {
+  // Hadr coding for simplicity
+  res.json([
+    { id: 1, firstName: "Bob", lastName: "Smith", email: "bob@gmail.com" },
+    { id: 1, firstName: "Jon", lastName: "Doe", email: "jon@yahoo.com" },
+    { id: 1, firstName: "Juan", lastName: "Smith", email: "juan@bungo.com" }
+  ]);
+});
+
 app.listen(port, function(err) {
   if (err) {
     console.log(err);
